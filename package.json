@@ -1,0 +1,30 @@
+{
+  "name": "aframe-schema-doc",
+  "version": "0.1.0",
+  "description": "Extract documentation on AFrame schemas in Markdown format",
+  "bin": {
+    "aframe-schema-doc": "aframe-schema-doc.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harlyq/aframe-schema-doc.git"
+  },
+  "keywords": [
+    "aframe",
+    "a-frame",
+    "aframe-vr"
+  ],
+  "author": "harlyq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harlyq/aframe-schema-doc/issues"
+  },
+  "homepage": "https://github.com/harlyq/aframe-schema-doc#readme",
+  "dependencies": {
+    "aframe": "^0.8.2",
+    "jsdom": "^11.10.0"
+  }
+}
