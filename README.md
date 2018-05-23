@@ -1,12 +1,16 @@
 # aframe-schema-doc
 
-Outputs documentation for the schemas (in Markdown format) for all calls to **AFRAME.registerComponent** and **AFRAME.registerSystem** in a given js file.
+Outputs documentation for the schemas (in Markdown format) for all calls to **AFRAME.registerComponent** and **AFRAME.registerSystem**.
 
-The process works by simulating a browser environment with jsdom, loading AFRAME, and then loading the input file.  We trap calls to registerComponent() or registerSystem(), parse the schema and output a Markdown table with information from the schema.  The documentation includes attribute name, type, default value and description (obtained from a *description* property).
+ We monkey patch calls to registerComponent() or registerSystem(), parse the schema and output a Markdown table with information from the schema.  The documentation includes attribute name, type, default value and description (obtained from a *description* property).
+
+ If using from Node the process works by simulating a browser environment with jsdom, loading AFRAME, and then loading the input file. 
+
+ If using from the browser, the documentation is output to the console.
 
 ### Examples
-given **test.js**
-```
+Given **test.js**
+```javascript
 AFRAME.registerComponent("test", {
   schema: {
     alpha: {
@@ -50,12 +54,24 @@ Copying into a Markdown file becomes
 |gamma|defines the type of system to use|'a'|['a', 'b', 'c']|
 
 ### Installation
+Using Node
 ```
 npm install -g aframe-schema-doc
 ```
+no installation needed, if using from the browser
 ### Usage
+If using Node
 ```
 aframe-schema-doc <filename>
 ```
+or from the browser, **include the script after AFRAME, but before your script files**. For example:
+```javascript
+<head>
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-schema-doc/dist/aframe-schema-doc.js"></script>
+  <script src="YOUR .JS FILE HERE"></script>
+  <script> /* OR YOUR SCRIPT HERE */ </script>
+</head>
+```
 ### Limitations
-The application will try to load the file using **require()**, so if there are errors in the file that prevent it from executing then documentation will not be output.
+If using Node, the application will try to load the file using **require()**, so if there are errors in the file that prevent it from executing then documentation will not be output.

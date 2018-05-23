@@ -1,12 +1,13 @@
 {
   "name": "aframe-schema-doc",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Extract documentation on AFrame schemas in Markdown format",
   "bin": {
-    "aframe-schema-doc": "aframe-schema-doc.js"
+    "aframe-schema-doc": "aframe-schema-doc.node.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "node build.js"
   },
   "repository": {
     "type": "git",

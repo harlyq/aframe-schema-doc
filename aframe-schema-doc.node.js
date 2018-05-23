@@ -1,3 +1,6 @@
+#! /usr/bin/env node
+// THIS CODE IS AUTOMATICALLY GENERATED USING build.js
+
 // NODE env - setup jsdom and determine the filename to use
 const isNode = typeof process === "object" && Object.prototype.toString.call(process) === "[object process]"
 if (isNode) {
