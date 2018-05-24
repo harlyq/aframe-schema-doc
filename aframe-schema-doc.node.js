@@ -94,6 +94,10 @@ if (isNode) {
       }
     }
 
+    function toKebabCase(str) {
+      return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()
+    }   
+
     let schemaKeys = Object.keys(schema)
     if (ARG_SORT) {
       schemaKeys.sort()
@@ -105,7 +109,7 @@ if (isNode) {
       let def = typeof property.default !== "undefined" ? printValue(property.default) : printDefaultFromType(property.type)
       let type = property.oneOf ? printValue(property.oneOf, false) : (property.type ? property.type : printTypeFromDefault(property.default))
 
-      str += `\n|${key}|${description}|${def}|${type}|`
+      str += `\n|${toKebabCase(key)}|${description}|${def}|${type}|`
     }
 
     return str
