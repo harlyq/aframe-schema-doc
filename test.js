@@ -9,7 +9,7 @@ AFRAME.registerComponent("test", {
       if: {gamma: ["a","c"]},
       description: "the maximum intensity",
     },
-    gamma: {
+    gammaEpsilon: {
       default: "a",
       oneOf: ["a", "b", "c"],
       description: "defines the type of system to use",

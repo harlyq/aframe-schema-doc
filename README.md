@@ -2,7 +2,7 @@
 
 Outputs documentation for the schemas (in Markdown format) for all calls to **AFRAME.registerComponent** and **AFRAME.registerSystem**.
 
- We monkey patch calls to registerComponent() or registerSystem(), parse the schema and output a Markdown table with information from the schema.  The documentation includes attribute name, type, default value and description (obtained from a *description* property).
+ We monkey patch calls to registerComponent() or registerSystem(), parse the schema and output a Markdown table with information from the schema.  The documentation includes attribute name (converted to kebab-case), type, default value and description (obtained from a *description* property).
 
  If using from Node the process works by simulating a browser environment with jsdom, loading AFRAME, and then loading the input file. 
 
@@ -22,7 +22,7 @@ AFRAME.registerComponent("test", {
       if: {gamma: ["a","c"]},
       description: "the maximum intensity",
     },
-    gamma: {
+    gammaEpsilon: {
       default: "a",
       oneOf: ["a", "b", "c"],
       description: "defines the type of system to use",
@@ -43,7 +43,7 @@ Filename 'test.js' --> './test.js'
 | -------- | ----------- | ------------- | ---- |
 |alpha|define the transparency of the subject (%)|0|int|
 |beta|_if **gamma** is 'a' or 'c'_. the maximum intensity|10|number|
-|gamma|defines the type of system to use|'a'|['a', 'b', 'c']|
+|gamma-epsilon|defines the type of system to use|'a'|['a', 'b', 'c']|
 ```
 Copying into a Markdown file becomes
 ## Component test
@@ -51,7 +51,7 @@ Copying into a Markdown file becomes
 | -------- | ----------- | ------------- | ---- |
 |alpha|define the transparency of the subject (%)|0|int|
 |beta|_if **gamma** is 'a' or 'c'_. the maximum intensity|10|number|
-|gamma|defines the type of system to use|'a'|['a', 'b', 'c']|
+|gamma-epsilon|defines the type of system to use|'a'|['a', 'b', 'c']|
 
 ### Installation
 Using Node
