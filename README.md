@@ -17,16 +17,16 @@ AFRAME.registerComponent("test", {
       type: "int",
       description: "define the transparency of the subject (%)",
     },
+    gammaEpsilon: {
+      default: "a",
+      oneOf: ["a", "b", "c"],
+      description: "defines the type of system to use",
+    },
     beta: {
       default: 10,
       if: {gamma: ["a","c"]},
       description: "the maximum intensity",
     },
-    gammaEpsilon: {
-      default: "a",
-      oneOf: ["a", "b", "c"],
-      description: "defines the type of system to use",
-    }
   }
 })
 ```
@@ -65,7 +65,7 @@ If using Node
 aframe-schema-doc <filename>
 ```
 or from the browser, **include the script after AFRAME, but before your script files**. For example:
-```javascript
+```html
 <head>
   <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-schema-doc/dist/aframe-schema-doc.js"></script>
@@ -73,5 +73,14 @@ or from the browser, **include the script after AFRAME, but before your script f
   <script> /* OR YOUR SCRIPT HERE */ </script>
 </head>
 ```
+### Configuration
+
+| Switch | Description |
+| -------- | ----------- |
+| --unsorted | output in the same order as the schema |
+| --sorted | output in alphabetical order (default) |
+| --kebabcase | output attribute names in kebab-case (default) |
+| --camelcase | output attribute names in camelCase |
+
 ### Limitations
 If using Node, the application will try to load the file using **require()**, so if there are errors in the file that prevent it from executing then documentation will not be output.
