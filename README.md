@@ -43,7 +43,7 @@ Filename 'test.js' --> './test.js'
 | -------- | ----------- | ------------- | ---- |
 |alpha|define the transparency of the subject (%)|0|int|
 |beta|_if **gamma** is 'a' or 'c'_. the maximum intensity|10|number|
-|gamma-epsilon|defines the type of system to use|'a'|['a', 'b', 'c']|
+|gammaEpsilon|defines the type of system to use|'a'|['a', 'b', 'c']|
 ```
 Copying into a Markdown file becomes
 ## Component test
@@ -51,7 +51,7 @@ Copying into a Markdown file becomes
 | -------- | ----------- | ------------- | ---- |
 |alpha|define the transparency of the subject (%)|0|int|
 |beta|_if **gamma** is 'a' or 'c'_. the maximum intensity|10|number|
-|gamma-epsilon|defines the type of system to use|'a'|['a', 'b', 'c']|
+|gammaEpsilon|defines the type of system to use|'a'|['a', 'b', 'c']|
 
 ### Installation
 Using Node
@@ -79,8 +79,8 @@ or from the browser, **include the script after AFRAME, but before your script f
 | -------- | ----------- |
 | --unsorted | output in the same order as the schema |
 | --sorted | output in alphabetical order (default) |
-| --kebabcase | output attribute names in kebab-case (default) |
-| --camelcase | output attribute names in camelCase |
+| --kebabcase | output attribute names in kebab-case |
+| --camelcase | output attribute names in camelCase (default) |
 
 ### Limitations
 If using Node, the application will try to load the file using **require()**, so if there are errors in the file that prevent it from executing then documentation will not be output.

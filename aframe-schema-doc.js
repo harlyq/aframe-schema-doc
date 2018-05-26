@@ -15,7 +15,7 @@ if (typeof process === "object" && Object.prototype.toString.call(process) === "
   
   global.AFRAME = require("aframe/src")
 
-  config = {sort: true, kebabCase: true}
+  config = {sort: true, kebabCase: false}
 
   for (let i = 2, n = process.argv.length; i < n; i++) {
     switch(process.argv[i].toLowerCase()) {
@@ -142,7 +142,7 @@ if (typeof process === "object" && Object.prototype.toString.call(process) === "
     oldRegisterSystem(name, components)
   }
 
-})(AFRAME, args => console.log(args), config || {sort: true, kebabCase: true})
+})(AFRAME, args => console.log(args), config || {sort: true, kebabCase: false})
 
 // NODE env - load the file 
 if (typeof process === "object" && Object.prototype.toString.call(process) === "[object process]") {
