@@ -1,6 +1,6 @@
 {
   "name": "aframe-schema-doc",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Extract documentation on AFrame schemas in Markdown format",
   "bin": {
     "aframe-schema-doc": "aframe-schema-doc.node.js"
@@ -9,6 +9,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "node build.js && git add -A aframe-schema-doc.node.js"
   },
+  "files": [
+    "aframe-schema-doc.js",
+    "aframe-schema-doc.node.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/harlyq/aframe-schema-doc.git"
