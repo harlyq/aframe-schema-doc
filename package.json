@@ -6,7 +6,6 @@
     "aframe-schema-doc": "aframe-schema-doc.node.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "version": "node build.js && git add -A aframe-schema-doc.node.js"
   },
   "files": [
