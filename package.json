@@ -1,6 +1,6 @@
 {
   "name": "aframe-schema-doc",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Extract documentation on AFrame schemas in Markdown format",
   "bin": {
     "aframe-schema-doc": "aframe-schema-doc.node.js"

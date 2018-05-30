@@ -1,5 +1,7 @@
 #! /usr/bin/env node
-// THIS CODE IS AUTOMATICALLY GENERATED USING build.js
+// THIS CODE IS AUTOMATICALLY GENERATED FROM build.js
+
+// Copyright 2018 harlyq ISC license
 
 // NODE env - setup jsdom and determine the filename to use
 if (typeof process === "object" && Object.prototype.toString.call(process) === "[object process]") {
@@ -60,14 +62,17 @@ if (typeof process === "object" && Object.prototype.toString.call(process) === "
     function printDefaultFromType(t) {
       switch (t) {
         case undefined: return "undefined"
+        case "boolean": return false
         case "array": return []
         case "vec2": return "{x: 0, y: 0}"
         case "vec3": return "{x: 0, y: 0, z: 0}"
         case "vec3": return "{x: 0, y: 0, z: 0, w: 0}"
+        case "time":
         case "int":
         case "number": return 0
         case "string": return "''"
         case "color": return "#FFF"
+        case "src": // deprecated
         case "asset":
         case "audio":
         case "model":
